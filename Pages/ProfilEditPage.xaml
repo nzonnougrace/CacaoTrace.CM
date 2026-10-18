@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls" x:Class="CacaoTrace.CM.Pages.ProfilEditPage" Title="Modifier le profil">
+    <Grid RowDefinitions="Auto,*">
+        <ctrl:AppHeader Title="Modifier le profil" ShowBack="True" />
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="26,24,26,32" Spacing="18" MaximumWidthRequest="560">
+                <ctrl:FormField Caption="Nom complet" Text="Amina Fofana" />
+                <ctrl:FormField Caption="Email" Text="amina.fofana@mail.cm" Keyboard="Email" />
+                <ctrl:FormField Caption="Téléphone" Text="+237 699 00 11 22" Keyboard="Telephone" />
+                <ctrl:PickerField Caption="Région" ItemsSource="{StaticResource Regions}" SelectedItem="Sud-Ouest" />
+                <ctrl:PickerField Caption="Langue" ItemsSource="{StaticResource Langues}" SelectedItem="Français" />
+                <Button Text="Enregistrer" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" Clicked="OnBack" />
+                <Button Text="Changer le mot de passe" Style="{StaticResource OutlineButton}" Clicked="OnPassword" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

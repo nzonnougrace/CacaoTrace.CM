@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CacaoTrace.CM.Controls.StatTile"
+             x:Name="root">
+    <Border Style="{StaticResource Card}" Padding="18,14">
+        <VerticalStackLayout Spacing="4">
+            <Label Text="{Binding Caption, Source={x:Reference root}}" FontSize="15" TextColor="{StaticResource TextGrey}" />
+            <Label Text="{Binding Value, Source={x:Reference root}}" FontSize="22" FontAttributes="Bold" />
+        </VerticalStackLayout>
+    </Border>
+</ContentView>

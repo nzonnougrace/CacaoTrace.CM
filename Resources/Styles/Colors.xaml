@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="Primary">#5D4037</Color>
+    <Color x:Key="PrimaryDark">#3E2723</Color>
+    <Color x:Key="Accent">#F9A825</Color>
+    <Color x:Key="Green">#2E7D32</Color>
+    <Color x:Key="GreenLight">#E8F5E9</Color>
+    <Color x:Key="AmberLight">#FFF8E1</Color>
+    <Color x:Key="Red">#D32F2F</Color>
+    <Color x:Key="RedLight">#FFEBEE</Color>
+    <Color x:Key="PageBg">#F9F9F9</Color>
+    <Color x:Key="TextDark">#212121</Color>
+    <Color x:Key="TextGrey">#757575</Color>
+    <Color x:Key="Line">#E0E0E0</Color>
+    <Color x:Key="GreyLight">#EEEEEE</Color>
+
+    <SolidColorBrush x:Key="PrimaryBrush" Color="#5D4037" />
+    <SolidColorBrush x:Key="LineBrush" Color="#E0E0E0" />
+
+    <!-- Dégradé des barres du graphique -->
+    <LinearGradientBrush x:Key="BarBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#2E7D32" Offset="0" />
+        <GradientStop Color="#81C784" Offset="1" />
+    </LinearGradientBrush>
+</ResourceDictionary>

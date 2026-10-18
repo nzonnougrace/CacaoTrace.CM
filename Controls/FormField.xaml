@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CacaoTrace.CM.Controls.FormField"
+             x:Name="root">
+    <VerticalStackLayout Spacing="8">
+        <Label Text="{Binding Caption, Source={x:Reference root}}" FontSize="16" FontAttributes="Bold"
+               TextColor="{StaticResource TextGrey}" />
+        <Border x:Name="Box" StrokeShape="RoundRectangle 16" StrokeThickness="2" Stroke="#E0E0E0"
+                BackgroundColor="White" Padding="16,0" HeightRequest="58">
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                <Entry x:Name="Input"
+                       Text="{Binding Text, Source={x:Reference root}, Mode=TwoWay}"
+                       Placeholder="{Binding Placeholder, Source={x:Reference root}}"
+                       IsPassword="{Binding IsPassword, Source={x:Reference root}}"
+                       Keyboard="{Binding Keyboard, Source={x:Reference root}}"
+                       VerticalOptions="Center"
+                       Focused="OnFocused" Unfocused="OnUnfocused" />
+                <Label Grid.Column="1" Text="👁" FontSize="22" VerticalOptions="Center"
+                       IsVisible="{Binding ShowToggle, Source={x:Reference root}}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnToggle" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </Border>
+    </VerticalStackLayout>
+</ContentView>

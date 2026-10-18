@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CacaoTrace.CM.Controls.PickerField">
+    <VerticalStackLayout Spacing="8">
+        <Label x:Name="Cap" FontSize="16" FontAttributes="Bold" TextColor="#757575" />
+        <Border StrokeShape="RoundRectangle 16" StrokeThickness="2" Stroke="#E0E0E0"
+                BackgroundColor="White" Padding="16,0" HeightRequest="58">
+            <Grid ColumnDefinitions="*,Auto">
+                <Picker x:Name="Pk" VerticalOptions="Center" SelectedIndexChanged="OnChanged" />
+                <Label Grid.Column="1" Text="▾" FontSize="18" TextColor="#212121"
+                       VerticalOptions="Center" InputTransparent="True" />
+            </Grid>
+        </Border>
+    </VerticalStackLayout>
+</ContentView>

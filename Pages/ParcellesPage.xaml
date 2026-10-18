@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls"
+             x:Class="CacaoTrace.CM.Pages.ParcellesPage"
+             Title="Mes parcelles">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <ctrl:AppHeader Title="Mes parcelles" ShowAvatar="True" />
+
+        <Grid Grid.Row="1">
+            <ScrollView>
+                <VerticalStackLayout Spacing="0" Padding="0,0,0,110">
+
+                    <Border Style="{StaticResource Card}" StrokeShape="RoundRectangle 30" Margin="22,22,22,0"
+                            Padding="20,0" HeightRequest="58">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                            <Label Text="🔍" FontSize="20" VerticalOptions="Center" />
+                            <Entry Grid.Column="1" Placeholder="Rechercher une parcelle…" VerticalOptions="Center" />
+                        </Grid>
+                    </Border>
+
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="0,16,0,16">
+                        <HorizontalStackLayout x:Name="Chips" Spacing="10" Padding="22,0">
+                            <ctrl:Chip Text="Toutes"     IsSelected="True" Tapped="OnChip" />
+                            <ctrl:Chip Text="Active"     Tapped="OnChip" />
+                            <ctrl:Chip Text="En repos"   Tapped="OnChip" />
+                            <ctrl:Chip Text="Abandonnée" Tapped="OnChip" />
+                        </HorizontalStackLayout>
+                    </ScrollView>
+
+                    <VerticalStackLayout Spacing="16" Padding="22,0">
+                        <ctrl:ListCard Title="Parcelle Ekona" BadgeText="ACTIVE" BadgeKind="green" Route="parcelle"
+                                       Subtitle="📍 Ekona, Sud-Ouest · 2,4 ha · Forastero" />
+                        <ctrl:ListCard Title="Parcelle Muyuka" BadgeText="ACTIVE" BadgeKind="green" Route="parcelle"
+                                       Subtitle="📍 Muyuka, Sud-Ouest · 1,8 ha · Trinitario" />
+                        <ctrl:ListCard Title="Parcelle Tiko Nord" BadgeText="EN REPOS" BadgeKind="amber" Route="parcelle"
+                                       Subtitle="📍 Tiko, Sud-Ouest · 3,1 ha · Forastero" />
+                        <ctrl:ListCard Title="Parcelle Buea Est" BadgeText="ABANDONNÉE" BadgeKind="red" Route="parcelle"
+                                       Subtitle="📍 Buea, Sud-Ouest · 0,9 ha · Criollo" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <ctrl:Fab Route="parcelleform" />
+        </Grid>
+
+        <ctrl:BottomNavBar Grid.Row="2" ActiveTab="Parcelles" />
+    </Grid>
+</ContentPage>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CacaoTrace.CM.Controls.BottomNavBar">
+    <Grid BackgroundColor="White" RowDefinitions="1,Auto">
+        <BoxView HeightRequest="1" Color="#E0E0E0" />
+        <Grid Grid.Row="1" ColumnDefinitions="*,*,*,*" Padding="0,10,0,12">
+
+            <VerticalStackLayout Grid.Column="0" Spacing="3">
+                <Label Text="🏠" FontSize="26" HorizontalOptions="Center" />
+                <Label x:Name="TabAccueil" Text="Accueil" FontSize="14" HorizontalOptions="Center" />
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTab" CommandParameter="//Dashboard" />
+                </VerticalStackLayout.GestureRecognizers>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1" Spacing="3">
+                <Label Text="🌳" FontSize="26" HorizontalOptions="Center" />
+                <Label x:Name="TabParcelles" Text="Parcelles" FontSize="14" HorizontalOptions="Center" />
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTab" CommandParameter="//Parcelles" />
+                </VerticalStackLayout.GestureRecognizers>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="2" Spacing="3">
+                <Label Text="📦" FontSize="26" HorizontalOptions="Center" />
+                <Label x:Name="TabLots" Text="Lots" FontSize="14" HorizontalOptions="Center" />
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTab" CommandParameter="//Lots" />
+                </VerticalStackLayout.GestureRecognizers>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="3" Spacing="3">
+                <Label Text="🕒" FontSize="26" HorizontalOptions="Center" />
+                <Label x:Name="TabHistorique" Text="Historique" FontSize="14" HorizontalOptions="Center" />
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTab" CommandParameter="//Historique" />
+                </VerticalStackLayout.GestureRecognizers>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentView>

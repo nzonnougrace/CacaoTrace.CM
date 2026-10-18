@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls"
+             x:Class="CacaoTrace.CM.Pages.RecoltesPage"
+             Title="Récoltes">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <ctrl:AppHeader Title="Récoltes" ShowBack="True" ShowAvatar="True" />
+
+        <Grid Grid.Row="1">
+            <ScrollView>
+                <VerticalStackLayout Spacing="0" Padding="0,0,0,110">
+
+                    <ctrl:PickerField Caption="Campagne" ItemsSource="{StaticResource Campagnes}"
+                                      SelectedItem="2026 – Saison principale" Margin="22,24,22,0" />
+
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="0,18,0,18">
+                        <HorizontalStackLayout x:Name="Chips" Spacing="10" Padding="22,0">
+                            <ctrl:Chip Text="Toutes parcelles" IsSelected="True" Tapped="OnChip" />
+                            <ctrl:Chip Text="Ekona"  Tapped="OnChip" />
+                            <ctrl:Chip Text="Muyuka" Tapped="OnChip" />
+                            <ctrl:Chip Text="📅 Date" Tapped="OnChip" />
+                        </HorizontalStackLayout>
+                    </ScrollView>
+
+                    <VerticalStackLayout Spacing="16" Padding="22,0">
+                        <ctrl:ListCard Title="Ekona"     BadgeText="QUALITÉ A" BadgeKind="green" Route="evenement" Subtitle="14 sept. 2026 · 120 kg" />
+                        <ctrl:ListCard Title="Muyuka"    BadgeText="QUALITÉ B" BadgeKind="amber" Route="evenement" Subtitle="09 sept. 2026 · 85 kg" />
+                        <ctrl:ListCard Title="Ekona"     BadgeText="QUALITÉ A" BadgeKind="green" Route="evenement" Subtitle="28 août 2026 · 95 kg" />
+                        <ctrl:ListCard Title="Tiko Nord" BadgeText="QUALITÉ A" BadgeKind="green" Route="evenement" Subtitle="20 août 2026 · 160 kg" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <ctrl:Fab Route="recolteform" />
+        </Grid>
+
+        <ctrl:BottomNavBar Grid.Row="2" ActiveTab="Parcelles" />
+    </Grid>
+</ContentPage>

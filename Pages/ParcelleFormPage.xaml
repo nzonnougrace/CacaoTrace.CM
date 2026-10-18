@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls" x:Class="CacaoTrace.CM.Pages.ParcelleFormPage" Title="Parcelle">
+    <Grid RowDefinitions="Auto,*">
+        <ctrl:AppHeader Title="Formulaire de parcelle" ShowBack="True" />
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="26,24,26,32" Spacing="18" MaximumWidthRequest="560">
+                <ctrl:FormField Caption="Nom de la parcelle" Placeholder="Ex. Parcelle Ekona" />
+                <ctrl:FormField Caption="Localité" Placeholder="Ex. Ekona, Sud-Ouest" />
+                <ctrl:FormField Caption="Superficie (ha)" Placeholder="Ex. 2,4" Keyboard="Numeric" />
+                <ctrl:FormField Caption="Nombre de pieds" Placeholder="Ex. 1 280" Keyboard="Numeric" />
+                <ctrl:PickerField Caption="Variété" ItemsSource="{StaticResource Varietes}" SelectedItem="Forastero" />
+                <ctrl:PickerField Caption="Statut" ItemsSource="{StaticResource Statuts}" SelectedItem="Active" />
+                <Button Text="Enregistrer" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" Clicked="OnBack" />
+                <Button Text="Annuler" Style="{StaticResource OutlineButton}" Clicked="OnBack" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

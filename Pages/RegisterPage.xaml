@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls"
+             x:Class="CacaoTrace.CM.Pages.RegisterPage"
+             Title="Inscription">
+    <Grid RowDefinitions="Auto,*">
+        <ctrl:AppHeader Title="Créer un compte" ShowBack="True" BackRoute="//Login" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="26,24,26,28" Spacing="20" MaximumWidthRequest="520">
+
+                <Label Text="Rejoignez la communauté CacaoTrace CM" FontSize="18"
+                       TextColor="{StaticResource TextGrey}" HorizontalTextAlignment="Center" />
+
+                <ctrl:FormField Caption="Nom complet" Text="Amina Fofana" />
+                <ctrl:FormField Caption="Email" Text="amina.fofana@mail.cm" Keyboard="Email" />
+                <ctrl:PickerField Caption="Région" ItemsSource="{StaticResource Regions}" SelectedItem="Sud-Ouest" />
+
+                <VerticalStackLayout Spacing="8">
+                    <ctrl:FormField Caption="Mot de passe" Text="Cacao2026!" IsPassword="True" />
+                    <Grid ColumnDefinitions="4*,*" ColumnSpacing="0" HeightRequest="8">
+                        <BoxView Color="#388E3C" CornerRadius="4" />
+                        <BoxView Grid.Column="1" Color="#E0E0E0" CornerRadius="4" />
+                    </Grid>
+                    <Label Text="Fort" FontSize="15" TextColor="{StaticResource Green}" />
+                </VerticalStackLayout>
+
+                <ctrl:FormField Caption="Confirmer le mot de passe" Text="Cacao2026!" IsPassword="True" />
+
+                <HorizontalStackLayout Spacing="8">
+                    <CheckBox IsChecked="True" VerticalOptions="Start" />
+                    <Label VerticalOptions="Center" FontSize="17" WidthRequest="300" LineBreakMode="WordWrap">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="J'accepte les " />
+                                <Span Text="conditions d'utilisation" TextColor="{StaticResource Green}" FontAttributes="Bold" />
+                                <Span Text=" de CacaoTrace CM." />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </HorizontalStackLayout>
+
+                <Button Text="S'inscrire" Style="{StaticResource PrimaryButton}" Clicked="OnRegister" />
+
+                <Label Text="Déjà un compte ? Se connecter" TextColor="{StaticResource Green}" FontSize="18"
+                       FontAttributes="Bold" HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLogin" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

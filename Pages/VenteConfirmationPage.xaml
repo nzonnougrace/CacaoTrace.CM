@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls" x:Class="CacaoTrace.CM.Pages.VenteConfirmationPage" Title="Confirmation de vente">
+    <Grid RowDefinitions="Auto,*">
+        <ctrl:AppHeader Title="Confirmation de vente" />
+        <VerticalStackLayout Grid.Row="1" Padding="28" Spacing="18" VerticalOptions="Center" MaximumWidthRequest="520">
+            <Label Text="✅" FontSize="80" HorizontalOptions="Center" />
+            <Label Text="Lot mis en vente" Style="{StaticResource H1}" HorizontalTextAlignment="Center" />
+            <Label Text="Lot L-2026-014 · 215 kg · 1 580 FCFA / kg" Style="{StaticResource Muted}"
+                   FontSize="18" HorizontalTextAlignment="Center" />
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Label Text="Statut du lot :" FontSize="17" VerticalOptions="Center" />
+                <ctrl:Badge Text="EN VENTE" Kind="amber" />
+            </HorizontalStackLayout>
+            <Button Text="Retour aux lots" Style="{StaticResource PrimaryButton}" Margin="0,20,0,0" Clicked="OnLots" />
+            <Button Text="Voir l'historique" Style="{StaticResource OutlineButton}" Clicked="OnHistory" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

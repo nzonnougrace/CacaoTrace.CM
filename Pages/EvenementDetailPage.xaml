@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls" x:Class="CacaoTrace.CM.Pages.EvenementDetailPage" Title="Détail de l'événement">
+    <Grid RowDefinitions="Auto,*">
+        <ctrl:AppHeader Title="Détail de l'événement" ShowBack="True" />
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="26,24,26,32" Spacing="12" MaximumWidthRequest="560">
+                <Label Text="Récolte — Parcelle Ekona" FontSize="26" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                <HorizontalStackLayout Spacing="10" Margin="0,0,0,8">
+                    <Label Text="Preuve de traçabilité" Style="{StaticResource Muted}" VerticalOptions="Center" />
+                    <ctrl:Badge Text="VÉRIFIÉ" Kind="green" />
+                </HorizontalStackLayout>
+                <ctrl:InfoRow Caption="Type"      Value="Récolte" />
+                <ctrl:InfoRow Caption="Parcelle"  Value="Ekona" />
+                <ctrl:InfoRow Caption="Date"      Value="14 sept. 2026" />
+                <ctrl:InfoRow Caption="Poids"     Value="120 kg" />
+                <ctrl:InfoRow Caption="Qualité"   Value="A" />
+                <ctrl:InfoRow Caption="Référence" Value="TRC-2026-0914-EK" />
+                <Button Text="Retour" Style="{StaticResource OutlineButton}" Margin="0,16,0,0" Clicked="OnBack" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

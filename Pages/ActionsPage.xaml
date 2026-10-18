@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls" x:Class="CacaoTrace.CM.Pages.ActionsPage" Title="Ajouter">
+    <Grid RowDefinitions="Auto,*">
+        <ctrl:AppHeader Title="Que souhaitez-vous ajouter ?" ShowBack="True" />
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="22,24" Spacing="16" MaximumWidthRequest="560">
+                <ctrl:ListCard Title="🌳  Nouvelle parcelle" Subtitle="Enregistrer une nouvelle plantation" Route="parcelleform" />
+                <ctrl:ListCard Title="🌿  Nouvelle récolte"  Subtitle="Ajouter une récolte à une parcelle" Route="recolteform" />
+                <ctrl:ListCard Title="📦  Nouveau lot"       Subtitle="Constituer un lot à partir de récoltes" Route="constitution" />
+                <ctrl:ListCard Title="💰  Nouvelle vente"    Subtitle="Mettre un lot disponible en vente" Route="//Lots" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

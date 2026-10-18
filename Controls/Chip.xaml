@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CacaoTrace.CM.Controls.Chip">
+    <Border x:Name="Box" StrokeShape="RoundRectangle 22" StrokeThickness="1" Stroke="#E0E0E0"
+            BackgroundColor="White" Padding="20,11">
+        <Label x:Name="Lbl" FontSize="17" TextColor="#757575" />
+        <Border.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTapped" />
+        </Border.GestureRecognizers>
+    </Border>
+</ContentView>

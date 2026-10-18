@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls"
+             x:Class="CacaoTrace.CM.Pages.LotsPage"
+             Title="Lots">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <ctrl:AppHeader Title="Lots" ShowAvatar="True" />
+
+        <Grid Grid.Row="1">
+            <ScrollView>
+                <VerticalStackLayout Spacing="0" Padding="0,0,0,110">
+
+                    <Border Style="{StaticResource Card}" StrokeShape="RoundRectangle 30" Margin="22,22,22,0"
+                            Padding="20,0" HeightRequest="58">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                            <Label Text="🔍" FontSize="20" VerticalOptions="Center" />
+                            <Entry Grid.Column="1" Placeholder="Rechercher un lot…" VerticalOptions="Center" />
+                        </Grid>
+                    </Border>
+
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="0,16,0,16">
+                        <HorizontalStackLayout x:Name="Chips" Spacing="10" Padding="22,0">
+                            <ctrl:Chip Text="Tous"       IsSelected="True" Tapped="OnChip" />
+                            <ctrl:Chip Text="Disponible" Tapped="OnChip" />
+                            <ctrl:Chip Text="Vendu"      Tapped="OnChip" />
+                            <ctrl:Chip Text="Qualité A"  Tapped="OnChip" />
+                        </HorizontalStackLayout>
+                    </ScrollView>
+
+                    <VerticalStackLayout Spacing="16" Padding="22,0">
+                        <ctrl:ListCard Title="Lot L-2026-014" BadgeText="DISPONIBLE" BadgeKind="green" Route="lotdetail"
+                                       Subtitle="Ekona · 215 kg · Qualité A · Séché" />
+                        <ctrl:ListCard Title="Lot L-2026-013" BadgeText="DISPONIBLE" BadgeKind="green" Route="lotdetail"
+                                       Subtitle="Muyuka · 180 kg · Qualité B · Fermenté" />
+                        <ctrl:ListCard Title="Lot L-2026-011" BadgeText="VENDU" BadgeKind="grey" Route="lotdetail"
+                                       Subtitle="Ekona · 340 kg · Qualité A · 340 000 FCFA" />
+                        <ctrl:ListCard Title="Lot L-2026-009" BadgeText="VENDU" BadgeKind="grey" Route="lotdetail"
+                                       Subtitle="Tiko Nord · 150 kg · Qualité A" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <ctrl:Fab Route="constitution" />
+        </Grid>
+
+        <ctrl:BottomNavBar Grid.Row="2" ActiveTab="Lots" />
+    </Grid>
+</ContentPage>

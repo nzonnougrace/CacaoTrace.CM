@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell x:Class="CacaoTrace.CM.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:CacaoTrace.CM.Pages"
+       Shell.FlyoutBehavior="Disabled"
+       Shell.NavBarIsVisible="False"
+       Shell.TabBarIsVisible="False"
+       Title="CacaoTrace CM">
+
+    <!-- Point d'entrée -->
+    <ShellContent Route="Login"      ContentTemplate="{DataTemplate pages:LoginPage}" />
+    <ShellContent Route="Register"   ContentTemplate="{DataTemplate pages:RegisterPage}" />
+
+    <!-- Les 4 onglets (la barre est dessinée par le contrôle BottomNavBar) -->
+    <ShellContent Route="Dashboard"  ContentTemplate="{DataTemplate pages:DashboardPage}" />
+    <ShellContent Route="Parcelles"  ContentTemplate="{DataTemplate pages:ParcellesPage}" />
+    <ShellContent Route="Lots"       ContentTemplate="{DataTemplate pages:LotsPage}" />
+    <ShellContent Route="Historique" ContentTemplate="{DataTemplate pages:HistoriquePage}" />
+</Shell>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls"
+             x:Class="CacaoTrace.CM.Pages.HistoriquePage"
+             Title="Historique">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <ctrl:AppHeader Title="Historique" ShowAvatar="True" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="0">
+
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="0,14,0,6">
+                    <HorizontalStackLayout x:Name="Chips" Spacing="10" Padding="22,0">
+                        <ctrl:Chip Text="Tout"     IsSelected="True" Tapped="OnChip" />
+                        <ctrl:Chip Text="Récoltes" Tapped="OnChip" />
+                        <ctrl:Chip Text="Lots"     Tapped="OnChip" />
+                        <ctrl:Chip Text="Ventes"   Tapped="OnChip" />
+                    </HorizontalStackLayout>
+                </ScrollView>
+
+                <Label Text="Octobre 2026" Style="{StaticResource SectionTitle}" Padding="22,12" />
+                <ctrl:ActivityRow Title="Vente — Lot L-2026-011" Subtitle="340 000 FCFA · 04 oct." />
+                <ctrl:ActivityRow Title="Lot L-2026-014 créé"    Subtitle="215 kg · 02 oct." />
+
+                <Label Text="Septembre 2026" Style="{StaticResource SectionTitle}" Padding="22,12" />
+                <ctrl:ActivityRow Title="Récolte — Parcelle Ekona"   Subtitle="120 kg · Qualité A · 14 sept." />
+                <ctrl:ActivityRow Title="Récolte — Parcelle Muyuka"  Subtitle="85 kg · Qualité B · 09 sept." />
+                <ctrl:ActivityRow Title="Parcelle Tiko Nord modifiée" Subtitle="Statut : En repos · 05 sept." />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <ctrl:BottomNavBar Grid.Row="2" ActiveTab="Historique" />
+    </Grid>
+</ContentPage>

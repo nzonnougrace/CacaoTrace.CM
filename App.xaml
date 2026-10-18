@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CacaoTrace.CM.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Listes utilisées par les Picker -->
+            <x:Array x:Key="Regions" Type="{x:Type x:String}">
+                <x:String>Adamaoua</x:String>
+                <x:String>Centre</x:String>
+                <x:String>Est</x:String>
+                <x:String>Extrême-Nord</x:String>
+                <x:String>Littoral</x:String>
+                <x:String>Nord</x:String>
+                <x:String>Nord-Ouest</x:String>
+                <x:String>Ouest</x:String>
+                <x:String>Sud</x:String>
+                <x:String>Sud-Ouest</x:String>
+            </x:Array>
+            <x:Array x:Key="Campagnes" Type="{x:Type x:String}">
+                <x:String>2026 – Saison principale</x:String>
+                <x:String>2026 – Petite saison</x:String>
+                <x:String>2025 – Saison principale</x:String>
+                <x:String>2025 – Petite saison</x:String>
+            </x:Array>
+            <x:Array x:Key="Varietes" Type="{x:Type x:String}">
+                <x:String>Forastero</x:String>
+                <x:String>Trinitario</x:String>
+                <x:String>Criollo</x:String>
+            </x:Array>
+            <x:Array x:Key="Statuts" Type="{x:Type x:String}">
+                <x:String>Active</x:String>
+                <x:String>En repos</x:String>
+                <x:String>Abandonnée</x:String>
+            </x:Array>
+            <x:Array x:Key="Parcelles" Type="{x:Type x:String}">
+                <x:String>Parcelle Ekona</x:String>
+                <x:String>Parcelle Muyuka</x:String>
+                <x:String>Parcelle Tiko Nord</x:String>
+                <x:String>Parcelle Buea Est</x:String>
+            </x:Array>
+            <x:Array x:Key="Qualites" Type="{x:Type x:String}">
+                <x:String>A</x:String>
+                <x:String>B</x:String>
+                <x:String>C</x:String>
+            </x:Array>
+            <x:Array x:Key="Traitements" Type="{x:Type x:String}">
+                <x:String>Fermenté</x:String>
+                <x:String>Séché</x:String>
+                <x:String>Fermenté et séché</x:String>
+            </x:Array>
+            <x:Array x:Key="Langues" Type="{x:Type x:String}">
+                <x:String>Français</x:String>
+                <x:String>English</x:String>
+            </x:Array>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

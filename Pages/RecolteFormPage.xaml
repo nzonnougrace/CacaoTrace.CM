@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls" x:Class="CacaoTrace.CM.Pages.RecolteFormPage" Title="Récolte">
+    <Grid RowDefinitions="Auto,*">
+        <ctrl:AppHeader Title="Ajouter une récolte" ShowBack="True" />
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="26,24,26,32" Spacing="18" MaximumWidthRequest="560">
+                <ctrl:PickerField Caption="Parcelle" ItemsSource="{StaticResource Parcelles}" SelectedItem="Parcelle Ekona" />
+                <ctrl:PickerField Caption="Campagne" ItemsSource="{StaticResource Campagnes}" SelectedItem="2026 – Saison principale" />
+                <ctrl:FormField Caption="Date de récolte" Text="14 sept. 2026" />
+                <ctrl:FormField Caption="Poids (kg)" Placeholder="Ex. 120" Keyboard="Numeric" />
+                <ctrl:PickerField Caption="Qualité" ItemsSource="{StaticResource Qualites}" SelectedItem="A" />
+                <Button Text="Enregistrer la récolte" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" Clicked="OnBack" />
+                <Button Text="Annuler" Style="{StaticResource OutlineButton}" Clicked="OnBack" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

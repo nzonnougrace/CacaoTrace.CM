@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls"
+             x:Class="CacaoTrace.CM.Pages.DashboardPage"
+             Title="Tableau de bord">
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- En-tête -->
+        <Grid BackgroundColor="{StaticResource Primary}" Padding="24,34,24,26" ColumnDefinitions="Auto,*" ColumnSpacing="18">
+            <Border WidthRequest="76" HeightRequest="76" StrokeShape="RoundRectangle 38" StrokeThickness="0"
+                    BackgroundColor="{StaticResource Accent}">
+                <Label Text="AF" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource PrimaryDark}"
+                       HorizontalOptions="Center" VerticalOptions="Center" />
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnNav" CommandParameter="profil" />
+                </Border.GestureRecognizers>
+            </Border>
+            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                <Label Text="Bonjour, Amina" FontSize="26" FontAttributes="Bold" TextColor="White" />
+                <Label Text="Région Sud-Ouest · Campagne 2026" FontSize="16" TextColor="#EFEBE9" />
+            </VerticalStackLayout>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ScrollView>
+                <VerticalStackLayout Spacing="0" Padding="0,0,0,110">
+
+                    <!-- 4 cartes de statistiques -->
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="14" RowSpacing="14"
+                          Padding="22,22,22,0">
+                        <Border Style="{StaticResource Card}" Padding="22,18">
+                            <VerticalStackLayout Spacing="2">
+                                <Label Text="6" FontSize="36" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                                <Label Text="Parcelles" Style="{StaticResource Muted}" />
+                            </VerticalStackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnNav" CommandParameter="//Parcelles" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Border Grid.Column="1" Style="{StaticResource Card}" Padding="22,18">
+                            <VerticalStackLayout Spacing="2">
+                                <Label Text="3" FontSize="36" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                                <Label Text="Récoltes en cours" Style="{StaticResource Muted}" />
+                            </VerticalStackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnNav" CommandParameter="recoltes" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Border Grid.Row="1" Style="{StaticResource Card}" Padding="22,18">
+                            <VerticalStackLayout Spacing="2">
+                                <Label Text="8" FontSize="36" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                                <Label Text="Lots disponibles" Style="{StaticResource Muted}" />
+                            </VerticalStackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnNav" CommandParameter="//Lots" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource Card}" Padding="22,18">
+                            <VerticalStackLayout Spacing="2">
+                                <Label Text="12" FontSize="36" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                                <Label Text="Ventes/mois" Style="{StaticResource Muted}" />
+                            </VerticalStackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnNav" CommandParameter="//Historique" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                    </Grid>
+
+                    <!-- Graphique -->
+                    <Label Text="Évolution de la production (kg)" Style="{StaticResource SectionTitle}" Margin="22,28,22,12" />
+                    <Border Style="{StaticResource Card}" Margin="22,0" Padding="22,22,22,16">
+                        <Grid RowDefinitions="140,Auto" ColumnDefinitions="*,*,*,*,*,*" ColumnSpacing="14" RowSpacing="10">
+                            <Border Grid.Column="0" HeightRequest="66"  VerticalOptions="End" StrokeThickness="0" Background="{StaticResource BarBrush}" StrokeShape="RoundRectangle 8,8,0,0" />
+                            <Border Grid.Column="1" HeightRequest="107" VerticalOptions="End" StrokeThickness="0" Background="{StaticResource BarBrush}" StrokeShape="RoundRectangle 8,8,0,0" />
+                            <Border Grid.Column="2" HeightRequest="82"  VerticalOptions="End" StrokeThickness="0" Background="{StaticResource BarBrush}" StrokeShape="RoundRectangle 8,8,0,0" />
+                            <Border Grid.Column="3" HeightRequest="132" VerticalOptions="End" StrokeThickness="0" Background="{StaticResource BarBrush}" StrokeShape="RoundRectangle 8,8,0,0" />
+                            <Border Grid.Column="4" HeightRequest="115" VerticalOptions="End" StrokeThickness="0" Background="{StaticResource BarBrush}" StrokeShape="RoundRectangle 8,8,0,0" />
+                            <Border Grid.Column="5" HeightRequest="140" VerticalOptions="End" StrokeThickness="0" Background="{StaticResource BarBrush}" StrokeShape="RoundRectangle 8,8,0,0" />
+
+                            <Label Grid.Row="1" Grid.Column="0" Text="Avr"  FontSize="14" TextColor="{StaticResource TextGrey}" HorizontalOptions="Center" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="Mai"  FontSize="14" TextColor="{StaticResource TextGrey}" HorizontalOptions="Center" />
+                            <Label Grid.Row="1" Grid.Column="2" Text="Juin" FontSize="14" TextColor="{StaticResource TextGrey}" HorizontalOptions="Center" />
+                            <Label Grid.Row="1" Grid.Column="3" Text="Juil" FontSize="14" TextColor="{StaticResource TextGrey}" HorizontalOptions="Center" />
+                            <Label Grid.Row="1" Grid.Column="4" Text="Aoû"  FontSize="14" TextColor="{StaticResource TextGrey}" HorizontalOptions="Center" />
+                            <Label Grid.Row="1" Grid.Column="5" Text="Sep"  FontSize="14" TextColor="{StaticResource TextGrey}" HorizontalOptions="Center" />
+                        </Grid>
+                    </Border>
+
+                    <!-- Dernières activités -->
+                    <Label Text="Dernières activités" Style="{StaticResource SectionTitle}" Margin="22,28,22,12" />
+                    <VerticalStackLayout Spacing="0">
+                        <ctrl:ActivityRow Title="Récolte ajoutée — Parcelle Ekona" Subtitle="120 kg · il y a 2 h" />
+                        <ctrl:ActivityRow Title="Lot L-2026-014 (en stock/scellé)" Subtitle="Qualité A · hier" />
+                        <ctrl:ActivityRow Title="Vente conclue" Subtitle="340 000 FCFA · il y a 2 j" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <ctrl:Fab Route="actions" />
+        </Grid>
+
+        <ctrl:BottomNavBar Grid.Row="2" ActiveTab="Accueil" />
+    </Grid>
+</ContentPage>

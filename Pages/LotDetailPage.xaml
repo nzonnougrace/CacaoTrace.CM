@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ctrl="clr-namespace:CacaoTrace.CM.Controls"
+             x:Class="CacaoTrace.CM.Pages.LotDetailPage"
+             Title="Détail du lot">
+    <Grid RowDefinitions="Auto,*">
+        <ctrl:AppHeader Title="Lot L-2026-014" ShowBack="True" ShowMenu="True" MenuClicked="OnMenu" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="0">
+
+                <Grid HeightRequest="100">
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#5D4037" Offset="0" />
+                            <GradientStop Color="#3E2723" Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Label Text="📦" FontSize="60" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Grid>
+
+                <VerticalStackLayout Padding="26,24,26,32" Spacing="16" MaximumWidthRequest="560">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Lot L-2026-014" FontSize="30" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="Créé le 02 oct. 2026 ·" FontSize="17" TextColor="{StaticResource TextGrey}" VerticalOptions="Center" />
+                            <ctrl:Badge Text="DISPONIBLE" Kind="green" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="14" RowSpacing="14">
+                        <ctrl:StatTile Caption="Parcelle" Value="Ekona" />
+                        <ctrl:StatTile Grid.Column="1" Caption="Poids net" Value="215 kg" />
+                        <ctrl:StatTile Grid.Row="1" Caption="Qualité" Value="A" />
+                        <ctrl:StatTile Grid.Row="1" Grid.Column="1" Caption="Traitement" Value="Séché" />
+                    </Grid>
+
+                    <Label Text="Traçabilité" Style="{StaticResource SectionTitle}" Margin="0,10,0,0" />
+                    <VerticalStackLayout Spacing="12">
+                        <ctrl:InfoRow Caption="Récolte source" Value="14 sept. 2026" />
+                        <ctrl:InfoRow Caption="Fermentation"   Value="6 jours" />
+                        <ctrl:InfoRow Caption="Séchage"        Value="8 jours" />
+                    </VerticalStackLayout>
+
+                    <Label Text="Proposer à la vente" Style="{StaticResource SectionTitle}" Margin="0,10,0,0" />
+                    <ctrl:FormField Caption="Prix proposé (FCFA / kg)" Text="1 580" Keyboard="Numeric" />
+                    <Button Text="Mettre en vente" Style="{StaticResource PrimaryButton}" Clicked="OnSell" />
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
